@@ -1,0 +1,234 @@
+@font-face {
+    font-family: Mathe;
+    src: url("https://cdn.xecades.xyz/fonts/Mathematica6.ttf")
+}
+
+@font-face {
+    font-family: JetBrains;
+    src: url("https://cdn.xecades.xyz/fonts/JetBrainsMono.ttf")
+}
+
+:root {
+    /* gloabl */
+    --base-font-size: 16px;
+    --background-scale: 1.2;
+    --name-size: 13rem;
+    /* a.lnk & container*/
+    --a-lnk-padding-top: 0.625rem;
+    --a-lnk-padding-left: 1.25rem;
+    --a-lnk-radius: 0.1875rem;
+    --a-lnk-size: 1rem;
+    --a-lnk-font: 'JetBrains';
+    --a-lnk-spacing: 0.375rem;
+    --a-lnk-container-spacing: var(--a-lnk-spacing);
+    /* content container */
+    --content-container-width: 100%;
+    --content-container-margin-top: 2rem;
+    /* title & container*/
+    --title-size: 5.3rem;
+    --title-spacing: 0.0625rem;
+    --title-shadow: 0.9375rem;
+    --title-scale: 1.06;
+    /* line container */
+    --line-container-height: var(--quote-size);
+    /* quote */
+    --quote-font: 'Microsoft Yahei';
+    --quote-size: 1rem;
+    /* line */
+    --line-flow: 0.625rem;
+    --line-width: 50%;
+    --line-width-max: 54%;
+    /* main container */
+    --container-width: 60%;
+    --container-height: 50%;
+    --container-radius: 0.25rem;
+    --container-shadow: 1.25rem;
+    /* colors */
+    --black: #111;
+    --white: white;
+    --cyan: cyan;
+    --rice-white-shadow: rgba(238, 238, 238, 0.3);
+    --black-shadow: rgb(17, 17, 17, .7);
+    --white-shadow: rgb(255, 255, 255, .7);
+}
+
+/* landscape */
+/* @media only screen and (max-width : 1024px) and (orientation : landscape) {} */
+
+/* portrait */
+@media only screen and (max-width : 1024px) and (orientation : portrait) {
+    :root {
+        --base-font-size: 37px;
+        --name-size: 6rem;
+    }
+}
+
+* {
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid cyan; */
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+html,
+body {
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.background {
+    background-image: url(https://cdn.xecades.xyz/lib/home/background.jpg);
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-size: cover;
+    transition: transform .8s, opacity 1.5s;
+}
+
+.background.move {
+    transform: scale(var(--background-scale));
+}
+
+.container {
+    position: absolute;
+    width: var(--container-width);
+    height: var(--container-height);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    opacity: 0;
+    border-radius: var(--container-radius);
+    transform: translate(-50%, -50%);
+    transition: box-shadow .8s, background-color .8s, opacity 1.5s;
+}
+
+.container:hover {
+    box-shadow: 0 0 var(--container-shadow) var(--black-shadow);
+    background-color: var(--white);
+}
+
+.title-container {
+    margin-top: calc((var(--total-container-hight) - var(--total-height)) / 2);
+    transition: transform .5s;
+}
+
+.title-container.move {
+    transform: scale(var(--title-scale));
+}
+
+a.title {
+    font-family: Mathe;
+    font-size: var(--title-size);
+    font-weight: bold;
+    letter-spacing: var(--title-spacing);
+    color: var(--black);
+    text-decoration: none;
+    transition: text-shadow .5s;
+}
+
+a.title:hover {
+    text-shadow: 0 0 var(--title-shadow) var(--cyan);
+}
+
+.line-container {
+    position: relative;
+    height: var(--line-container-height);
+    width: var(--line-width);
+    left: calc((100% - var(--line-width)) / 2);
+    transition: width .5s, left .5s, transform .5s;
+}
+
+.line-container.move {
+    transform: translate(0, var(--line-flow));
+}
+
+.line-container:hover {
+    width: var(--line-width-max);
+    left: calc((100% - var(--line-width-max)) / 2);
+}
+
+.line {
+    background-color: var(--black);
+    height: 1px;
+    box-shadow: 0 2px 5px var(--black-shadow);
+}
+
+.quote {
+    font-family: var(--quote-font);
+    font-size: var(--quote-size);
+    font-weight: lighter;
+    color: transparent;
+    transform: translate(0, 10px);
+    cursor: pointer;
+    transition: color .5s;
+}
+
+.quote.move {
+    color: var(--black);
+}
+
+.content-container {
+    margin-top: var(--content-container-margin-top);
+    position: absolute;
+    text-align: center;
+    width: var(--content-container-width);
+    left: calc((100% - var(--content-container-width)) / 2);
+}
+
+.lnk-container {
+    height: calc(var(--a-lnk-total-size) + var(--a-lnk-container-spacing));
+}
+
+a.lnk {
+    font-family: var(--a-lnk-font);
+    font-size: var(--a-lnk-size);
+    color: var(--black);
+    text-decoration: none;
+    padding: var(--a-lnk-padding-top) var(--a-lnk-padding-left);
+    border: 1px solid var(--black);
+    border-radius: var(--a-lnk-radius);
+    margin-left: calc(var(--a-lnk-spacing) / 2);
+    margin-right: calc(var(--a-lnk-spacing) / 2);
+    background-color: var(--rice-white-shadow);
+    transition: color .4s, background-color .4s, box-shadow .4s, text-shadow .4s, border .4s;
+}
+
+a.lnk.move {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+a.lnk:hover {
+    text-shadow: 6px 6px 5px var(--black);
+    box-shadow: inset 6px 6px 10px var(--black-shadow);
+}
+
+.wd {
+    position: absolute;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 1.3s;
+}
+
+.name {
+    text-align: center;
+    font-family: Mathe;
+    transition: text-shadow 1.5s, transform 1.5s;
+    font-size: var(--name-size);
+}

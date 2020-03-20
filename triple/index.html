@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="/nazo/image/favicon.ico">
+    <link rel="apple-touch-icon" href="/nazo/image/favicon.ico">
+    <link rel="shortcut icon" href="/nazo/image/favicon.ico">
+    <script type="text/javascript" src="/nazo/BaiduAnalyze.js"></script>
+    <script type="text/javascript" src="/nazo/MobileWarning.js"></script>
+    <title>Nazo</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            color: #35495e;
+            font-family: Microsoft YaHei, SimHei, Roboto Mono, Source Code Pro, Ubuntu Mono, Consolas
+        }
+
+        .container {
+            min-height: 100vh;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .container,
+        .container>.card-wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around
+        }
+
+        .container>.card-wrap {
+            height: 60vh;
+            width: 100vw;
+            overflow: visible
+        }
+
+        .container>.card-wrap,
+        .container>.card-wrap .card {
+            position: relative;
+            transition: -webkit-transform .5s;
+            transition: transform .5s;
+            transition: transform .5s, -webkit-transform .5s
+        }
+
+        .container>.card-wrap .card {
+            margin: 0 auto;
+            height: 100%;
+            width: 60%;
+            border: 2px solid #35495e;
+            overflow: hidden;
+            border-radius: 12px
+        }
+
+        .container>.card-wrap .card .title {
+            position: absolute;
+            width: 100%;
+            top: 20%;
+            font-weight: 100;
+            font-size: 8vh;
+            letter-spacing: 1px
+        }
+
+        .container>.card-wrap .card .hint {
+            position:absolute;
+            left: 10px;
+            color: #35495e;
+            cursor: default
+        }
+
+        .container>.card-wrap .card .question-text {
+            color: #35495e
+        }
+
+        .container>.card-wrap .card .question-content {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 60%;
+            text-align: center;
+            font-size: 3vh
+        }
+
+        .container>.card-wrap .card .question-content .question-input>input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            border-bottom: 1px solid #000;
+            outline: none;
+            padding: 8px;
+            font-size: 2vh
+        }
+
+        .cardIn {
+            -webkit-animation: 1s forwards;
+            animation: 1s forwards;
+            -webkit-animation-name: cardIn;
+            animation-name: cardIn
+        }
+
+        @-webkit-keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+
+        @keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="card-wrap">
+            <div class="card cardIn">
+                <div class="title">Level 14</div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <textarea rows="10" cols="100" readonly="readonly" title="答案请小写">WkdGMFlUcHBiV0ZuWlM5d2JtYzdZbUZ6WlRZMExHbFdRazlTZHpCTFIyZHZRVUZCUVU1VFZXaEZWV2RCUVVGRVNVRkJRVUY1UTBGWlFVRkJRV1ZRTkdsNFFVRkJRVUZZVGxOU01FbEJjbk0wWXpaUlFVRkJRVkp1VVZVeFFrRkJRM2hxZDNZNFdWRlZRVUZCUVVwalJXaGFZM2RCUVVSelRVRkJRVGRFUVdOa2RuRkhVVUZCUVZsb1UxVlNRbFpIYUVRM1dtdzVWRXBXVmtoTlpsQlBZemhHWW14cE5YSktlalIzYkhsaWNHbEViRWd2TVZaQ2FUUnlSVnBqY0ZWbloydHlZbmhCWWxrMlFsUnpNRElyTUdaWWNHcGhiRnBzZGtGQ1ZYVTVORVYyVFhOWWVVUm1USFZCVnpJeGRHdFJTMng1TjFVMWRrUktabmxKUldGTUwyTTFjQ3N2TVM5MFZEZG9kbWM0T1N0SFpqUnlVR1JRWldZelpsSTJaVFV6ZWxCUFlpOTZUWFJuYjI4MGVua3ZORVJVWkZWU2QzVnFNM2hKYzJFeWJVTnVNVzkwUXpCMGNqY3JkMXB4VURCb1NqQjFiVEJ3WjNFMlYxVTVibWxUVWxFeU5GWmhOakUyVjJ0MmJGbG1TRTVuVmtrNVVqWjFiVEExU1RKTVJXVmhZbkpYVlRONGR6QnlTMnd3WjJrclEwbHhWMGszYkZKeGNXRnlPRko0UzFoamNIQnRZVkpHU1VOVFZreERZMnRsYVZKVUwwWk1PWGhtUkU5RlZsaDVOMGhWYVV4UVdqaDVXbUZtWVdjNE9FVnhiR0Z4YUhOUFdsbGFjVmMzTWtwQmFrOXhNVU5OT0ZOemFHTklObFZOTnpKT1NYTjFlSGhGYUd4NWVGVTNTM1p4ZEZWdGIzbFRZMFozWm1oMVNuWTRSMUp0Y1doSmMxcDViMnBVYUZCbE5GUkhNa05oV1hkTVEwdERVRXRsWWxoVGExUjJjVTQwYUVWb1MybE9WamRyTlU1cGVFZG1kMVZSY0ZObFJuZDJiSFp2TDBGMVMxSm5lbFJMTTNRMVZUSmxjMVJYYW1KelYzQXZha1JFYVdWNmFtNDVZbkYxVEhsMFNXMDVlRWd3YjJob2VXdG9SakF5VlRkVVNIbHViRWg1V0hCRVFUUkdOR1JpVEM5WFYyUjBMM2h5YTFwcGFrMVBTR1Z5Ylcxa1UyeGtkalJ4WWxCU2FIWmtjemMwVkZZd1prOUdVbUlyUlVsMkwxcHNjRlJDYlhCaGNtMTVTR296ZUU5WlYyaGxTVlZSUmxGUU5qUlBjVzA0ZWpOR2FVUm1OelZUU0djdlEyOU5XbVU1ZUhwRWVFNXBhV3ROTlRScVZHWllhMk5yYm1NeGFGTklkMGhwTlVVdmNVSlRTelIwVTNBdmFVZFZMM1YzWW1GWVZXVlFWSE13WW5wTGFuSnRhMjFOUzNkRlV6ZFpVRWg2T1dGUmNVUlZZM0o0TkZOelZHRm5kbTVLVG5sa1dtd3dSbmxaWm1oWmQzUmhabUpvY0RFME5tWkxOaXM0Wm1KM0wwNUpOa3BYVlhOTksxUklTakpVVlhFemMyWnNVMFp2U0RsNGJtOXhWWE5yUkZsSFlXbE9jVlZhS3k5elRVUllZMFJTZEZKVVJHSnFSVzVJZW5BelJtVlZXREp0TmpZeWNUVnpkRUkzTTFkMGJVaEdUVk4xT0hOTWJYaHNiVUZTZFd0NGVVcDBOMVlyVGxrelMyaHFRbk40VUVoeGNFeE5XVXhxYzNCRVFVeHllVlJSYkZaaU0yY3ljMjFrV2pkeFEwdHNVbFJyVGtzM1dqaFllbkJXVEhGVE1HMUxhRXMyTkRoc1RGcEZRMkZIUm1seWN6bGhOVVY1ZWxwU1IwbE1hVlZ6YXpCd1ZtaHFXbUpOYmt0S1pWZFdMekpMY0ZWV2ExVm9aMDkwYW1zeWRTOXhURWxyVDFsTmRVdFpiVGxuYm1SWU1IaGhkbFZNVTFkR1owcHdjVXRVWlZKSFEzVTRhVnBrZDJFelEyMW5UVUZwT0RaM1UyVkxUbTQ1Wm05eGNDOWFhWEI0VEhGSWN6aHJlbFpuYUN0Q1JWQnhXbHBLUXpaalkwVTRSWHBDYmtsdE16aHdkMlJFY21vM1FtaHhNbHBwUm5jdmFVNXVUVzExVUZreFdWQkxXV0ZLZVc5cFVIRm9ZbEJIVDFSRlptOTZPVVJLU1VNMldrNU5TbUp2ZGpsRE4wRjFZakJUWTJGNFprUnJRMGxsY1d3M09ESnZURlY0TkRKRFVYaE1NVVZhT0VsQ1pHbGlSVXB6VVhwRlNIVm1SVlZ5WjBwMmRtOVpjR0oxTWtwUU4zSTNSVlpsYWs0emVISlNVa05MT0ZnelVWQTJaM0JVVURaSVNrNU9XVmwxVVdWVWJtUnVTRTVoVFVKTk1GZEhLMk5rTms5ek5tUm1OMjAyTVhoM1JqSTNSaXRhT0VsblNYTTJXRlptVERsNFdXeFNWek5EYURaV1IwRnphM0JpTVRoelFrdDBSazFoZDI1TlNuZFBObFkxZGpsME5tbHNSSFZyVWsweVNVZEpSMHBVU21wWmFsZExPRmgzYlVFNE5VOVpibHBoTkc5cmFuTlRSbWgxU2t0bE9HSlJiRzFOY0N0S1RWZzNiRUZaY1VwdWVrVklURFpuY0ZOMk5tSktUWFYzTVVGcGJUSkNkMnRpZWxkTFVXTk9TbWxDYzNNdmNrVlVlV2cxTnpseFNWRmtNalZvZWxkcVJtVmhVa2Q1WkhaSWVUVmhNbGRJUzA5ME9GSkpjbkpPVGsxRFYwczRZa3QwWVVoallubG1aRFZKYmpZdmMzUjBMME4yTWxkM2F6VTJTQzlsZVM5SE0zWk9RWGxUV21od1ZFc3pjMmQxVWxaMFRWbExTa3hhZDNCVVRDOW9TbkJCVkdaM2NuUXlhV05WUW1OTFZscE5kV3RaUmpsVVNFSldVa2RqYlhSaFFsaFpibTB2Um5seU5FdFpXVlJsTlZveFNXcFFVbGxtYlVWeU5TdDNTV2xoUlRSVGRYSnRURFpUZVdGaFRISkZVa2MzUW1wdWFFODROVWROZEVWc1NtTjBkMFpUVW1STVRYTXJhbkV5V0Zkdk4yTTJTME5pWjJWRGEza3pXVlZJTTJwcVkxbHdUbGxrY0VsaWExWTNSbXhrY1VVMGNtaEthbWt2WjFJMVdWWkdkVlZrU1RSVlZuQmlWakpKTVZaUWQwNVFXSGxZY0VGWmNFNHhXVlJaVVVwRmNFbHlWR3M0VDFKWFpITjRSMVJ0UVRsMVRITmtRMlZWVnpOeWNsRTFWV2xQZFUweFpsWlVaQzlPYW1GVFlteFVLMU5hVEhWTldXbHpiVlpsVnpKbFp6ZDFRbTVIWTBrdmEwOTBka2gzY2pGMk1uaElTbmhCUkdGS2JqaHZSWG8yTWt4WE1XOTRVMVZtZGpsQ1ZGcG5la2N5VURaVE55dGtVSEE1WjFGb2J6RjNlRlJrYWt4RFVsSkhRV3BYUVRjMFQwOVlSMUUwYVVWd2VUSjViM2dyVHlzNVUxbEpSRXd3U25GT1IyaHJaMUJ3YTFKeWNHOVNaM2xyYkU1NFJHZGlWVU5uY0VRMFVGWmxlR0lyYVZsR2FWVTBkWE40UWt4emNHWkpRbWt3TldkdFpERkVNSGxDWjNsSmIxUjBUMU5TZVhCSlVGSmtVbmgyTVN0M2NtNVFia2t2TlVnMlRYRjJhRTl0WVhoUVJYZExOR0owWm5oV09ISnlhM016VmtSbVJIbG1ObVU0TDJNd1QwVndSbXN3TjBWdU9FOVZObk5MVVRKUGRIbDZTV2N3ZEZFMVREWmpTREEyWkdsaVRGcEtVMVJ6UjJGR1N6a3dNbGxsUnl0WFNEZHJiVTlPT1UxbmIyODBkM2w1YmpoUGVIWTBSakFyVldvd1prOWtaemRSUVVGQlFVRlRWVlpQVWtzMVExbEpTVDA9</textarea>
+                    </div>
+                </div>
+                <span class="hint" onclick="javascript:alert('其实我是给了提示的')">提示</span>
+            </div>
+        </div>
+    </section>
+    <style>
+        html::-webkit-scrollbar {
+            display: none !important
+        }
+
+        body::-webkit-scrollbar {
+            display: none !important
+        }
+    </style>
+</body>
+
+</html>

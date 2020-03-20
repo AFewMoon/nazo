@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="/nazo/image/favicon.ico">
+    <link rel="apple-touch-icon" href="/nazo/image/favicon.ico">
+    <link rel="shortcut icon" href="/nazo/image/favicon.ico">
+    <script type="text/javascript" src="/nazo/BaiduAnalyze.js"></script>
+    <script type="text/javascript" src="/nazo/MobileWarning.js"></script>
+    <script type="text/javascript" src="/nazo/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/nazo/lib/typing-animate.js"></script>
+    <title>Nazo</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            color: #35495e;
+            font-family: Microsoft YaHei, SimHei, Roboto Mono, Source Code Pro, Ubuntu Mono, Consolas
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .container {
+            min-height: 100vh;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .container,
+        .container>.card-wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around
+        }
+
+        .container>.card-wrap {
+            height: 60vh;
+            width: 100vw;
+            overflow: visible
+        }
+
+        .container>.card-wrap,
+        .container>.card-wrap .card {
+            position: relative;
+            transition: -webkit-transform .5s;
+            transition: transform .5s;
+            transition: transform .5s, -webkit-transform .5s
+        }
+
+        .container>.card-wrap .card {
+            margin: 0 auto;
+            height: 100%;
+            width: 60%;
+            border: 2px solid #35495e;
+            overflow: hidden;
+            border-radius: 12px
+        }
+
+        .container>.card-wrap .card .title {
+            position: absolute;
+            width: 100%;
+            top: 37%;
+            font-weight: 100;
+            font-size: 5vh;
+            letter-spacing: 1px
+        }
+
+        .container>.card-wrap .card .smalltitle {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            font-weight: 100;
+            font-size: 3vh;
+            letter-spacing: 1px
+        }
+
+        .container>.card-wrap .card .smalltitle2 {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            font-weight: 100;
+            font-size: 3vh;
+            letter-spacing: 1px
+        }
+
+        .container>.card-wrap .card .question-text {
+            color: #35495e
+        }
+
+        .container>.card-wrap .card .question-content {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 60%;
+            text-align: center;
+            font-size: 3vh
+        }
+
+        .container>.card-wrap .card .question-content .question-input>input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            border-bottom: 1px solid #000;
+            outline: none;
+            padding: 8px;
+            font-size: 2vh
+        }
+
+        .cardIn {
+            -webkit-animation: 1s forwards;
+            animation: 1s forwards;
+            -webkit-animation-name: cardIn;
+            animation-name: cardIn
+        }
+
+        @-webkit-keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+
+        @keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="card-wrap">
+            <div class="card cardIn">
+                <div class="title"></div>
+                <div class="smalltitle"></div>
+                <div class="smalltitle2"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var typing = new Typing("title", {
+            "typingSpeed": 90,
+            "cursorSpeed": 500,
+            "cursorChar": "|",
+            "cursorInfinity": true,
+            "head": "/* ",
+            "foot": " */",
+            "cursorColor": "black"
+        });
+        typing.sleep(1000)
+            .add("下面介绍下您需要了解的信息")
+            .sleep(500)
+            .delete()
+            .sleep(200)
+            .add("1. 答案对大小写敏感")
+            .sleep(500)
+            .delete()
+            .sleep(200)
+            .add("2. 答案中不会出现任何特殊字符")
+            .sleep(500)
+            .callback(function () {
+                var sub = new Typing("smalltitle", {
+                    "typingSpeed": 90,
+                    "cursorSpeed": 500,
+                    "cursorChar": "|",
+                    "cursorInfinity": false,
+                    "cursorColor": "black"
+                });
+                sub.add("例如 \"#\"、\"&\"、\"*\" 不会出现").sleep(500).delete().execute();
+            })
+            .sleep(500 + 20 * 90 * 2)
+            .delete()
+            .sleep(200)
+            .add("3. 我暂时没有设计 Cookie 保存游戏进度")
+            .sleep(500)
+            .delete(21)
+            .sleep(200)
+            .add("所以请以收藏的形式保存游戏")
+            .sleep(500)
+            .callback(function () {
+                var sub2 = new Typing("smalltitle2", {
+                    "typingSpeed": 90,
+                    "cursorSpeed": 500,
+                    "cursorChar": "|",
+                    "cursorInfinity": false,
+                    "cursorColor": "black"
+                });
+                sub2.add("对此我非常抱歉，如果您会相关操作，可以联系我").sleep(500).delete().execute();
+            })
+            .sleep(500 + 1980 + 1980)
+            .delete()
+            .sleep(200)
+            .add("Get Ready")
+            .sleep(500)
+            .delete()
+            .sleep(200)
+            .add("3...")
+            .sleep(640)
+            .delete()
+            .add("2...")
+            .sleep(640)
+            .delete()
+            .add("1...")
+            .sleep(640)
+            .callback(function () {
+                window.location.href = "../first";
+            })
+            .execute();
+    </script>
+    <style>
+        html::-webkit-scrollbar {
+            display: none !important
+        }
+
+        body::-webkit-scrollbar {
+            display: none !important
+        }
+    </style>
+</body>
+
+</html>

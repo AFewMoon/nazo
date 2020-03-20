@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="/nazo/image/favicon.ico">
+    <link rel="apple-touch-icon" href="/nazo/image/favicon.ico">
+    <link rel="shortcut icon" href="/nazo/image/favicon.ico">
+    <script type="text/javascript" src="/nazo/BaiduAnalyze.js"></script>
+    <script type="text/javascript" src="/nazo/MobileWarning.js"></script>
+    <title>Nazo</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            color: #35495e;
+            font-family: Microsoft YaHei, SimHei, Roboto Mono, Source Code Pro, Ubuntu Mono, Consolas
+        }
+
+        .container {
+            min-height: 100vh;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .container,
+        .container>.card-wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around
+        }
+
+        .container>.card-wrap {
+            height: 60vh;
+            width: 100vw;
+            overflow: visible
+        }
+
+        .container>.card-wrap,
+        .container>.card-wrap .card {
+            position: relative;
+            transition: -webkit-transform .5s;
+            transition: transform .5s;
+            transition: transform .5s, -webkit-transform .5s
+        }
+
+        .container>.card-wrap .card {
+            margin: 0 auto;
+            height: 100%;
+            width: 60%;
+            border: 2px solid #35495e;
+            overflow: hidden;
+            border-radius: 12px
+        }
+
+        .container>.card-wrap .card .title {
+            position: absolute;
+            width: 100%;
+            top: 20%;
+            font-weight: 100;
+            font-size: 8vh;
+            letter-spacing: 1px
+        }
+
+        .container>.card-wrap .card .hint {
+            position:absolute;
+            left: 10px;
+            color: #35495e;
+            cursor: default
+        }
+
+        .container>.card-wrap .card .question-text {
+            color: #35495e
+        }
+
+        .container>.card-wrap .card .question-content {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 60%;
+            text-align: center;
+            font-size: 3vh
+        }
+
+        .container>.card-wrap .card .question-content .question-input>input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            border-bottom: 1px solid #000;
+            outline: none;
+            padding: 8px;
+            font-size: 2vh
+        }
+
+        .cardIn {
+            -webkit-animation: 1s forwards;
+            animation: 1s forwards;
+            -webkit-animation-name: cardIn;
+            animation-name: cardIn
+        }
+
+        @-webkit-keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+
+        @keyframes cardIn {
+            0% {
+                -webkit-transform: translate3d(0, 300px, 0) rotate(15deg);
+                transform: translate3d(0, 300px, 0) rotate(15deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="card-wrap">
+            <div class="card cardIn">
+                <div class="title">Level 20</div>
+                <div class="question-content">
+                    <div class="question-text">xn--1nrsjz52jrzq</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        html::-webkit-scrollbar {
+            display: none !important
+        }
+
+        body::-webkit-scrollbar {
+            display: none !important
+        }
+    </style>
+</body>
+
+</html>
